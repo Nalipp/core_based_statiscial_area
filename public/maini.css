@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: monospace;
+  color: grey;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  font-family: 'Inconsolata', monospace;
+  background: #6EBED7;
+  color: white;
+}
+
+header h1 {
+  font-size: 50px;
+  letter-spacing: 2.6px;
+  padding: 10px 30px;
+  background: grey;
+}
+
+header h2 {
+  font-size: 25px;
+  letter-spacing: 1.6px;
+  padding: 10px 40px;
+}
+
+header p a {
+  color: #d4d4d4;
+  padding: 10px 0 40px 50px;
+}
+
+.form-wrapper {
+  margin: 30px;
+  text-align: center;
+}
+
+label a {
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin: 10px;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+button {
+  font-size: 20px;
+  margin: 50px 10px 10px 10px;
+  padding: 20px 60px;
+  border: none;
+  color: grey;
+  border-radius: 30px;
+  background: #d4d4d4;
+}
+
+.table-wrapper {
+  margin: 30px;
+}
+
+nav {
+  font-family: 'Inconsolata', monospace;
+  margin-top: 30px;
+  padding: 30px;
+  background: white;
+}
+
+nav a h3 {
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: grey;
+  text-align: center;
+  display: inline-block;
+  background: white;
+  padding: 15px 30px;
+  min-width: 120px;
+  margin-left: 2.5%;
+  border: 2px solid grey;
+  border-radius: 20px;
+}
+
+table th {
+  font-size: 16px;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  border-right: 2px dotted grey;
+  padding: 20px 10px;
+}
+
+table th:first-child {
+  border-left: 2px dotted grey;
+}
+
+table th:nth-child(6) {
+  padding: 3px;
+}
+
+table td {
+  font-size: 14px;
+  padding: 4px 4px 4px 10px;
+  text-align: left;
+  border-bottom: 2px solid grey;
+  border-right: 2px dotted grey;
+}
+
+table td:first-child {
+  border-left: 2px dotted grey;
+}
+
+table td:nth-child(n+3) {
+  font-size: 16px;
+  text-align: right;
+  padding-right: 25px;
+}
+
+/* tablesorter  jQuery plugin http://tablesorter.com/docs/#Download */
+
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+  background-color: #6EBED7;
+  color: white;
+}
+
+footer {
+  background: grey;
+  height: 100px
+}

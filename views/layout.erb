@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sortable US Population Data</title>
+    <link rel="stylesheet" href="/maini.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/tablesorter/jquery.tablesorter.js"></script>
+    <script src="javascripts/tablesorter.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Sortable US Population Data</h1>
+      <h2>core statistical based areas</h2>
+      <p><a href="http://www.census.gov/popest/data/metro/totals/2015/index.html" target="_blank">download</a> the us government source data</p>
+      <nav>
+        <a href="#"><h3>Density</h3></a>
+        <a href="#"><h3>age</h3></a>
+        <a href="#"><h3>pop change</h3></a>
+        <a href="#"><h3>race</h3></a>
+      </nav>
+    </header>
+    <section role="main" class="main">
+      <%== yield %>
+    </section>
+    <footer></footer>
+  </body>
+</html>
