@@ -31,10 +31,10 @@
         <tr>
           <td><%= row[:geo_area]%></td>
           <td><%= row[:state]%></td>
-          <td><%= row[:pop_2010].gsub(/,/, "").to_i %></td>
-          <td><%= row[:sq_miles].gsub(/,/, "").to_i %></td>
-          <td><%= row[:weighted_density_2010].gsub(/,/, "").to_i %></td>
-          <td><%= row[:density_change].gsub(/,/, "").to_i %></td>
+          <td><%= row[:pop_2010] %></td>
+          <td><%= row[:sq_miles] %></td>
+          <td><%= row[:weighted_density_2010] %></td>
+          <td><%= row[:density_change] %></td>
         </tr>
       <% end %>
     </tbody>

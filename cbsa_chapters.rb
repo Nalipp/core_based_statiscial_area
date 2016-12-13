@@ -32,32 +32,32 @@ get "/density" do
   erb :density, layout: :layout
 end
 
+def get_page(pop_data, data_type)
+  @population_data = pop_data
+  case data_type
+  when "age"
+    erb :age, layout: :layout
+  when "pop_change"
+    erb :pop_change, layout: :layout
+  when "race"
+    erb :race, layout: :layout
+  else "density"
+    erb :density, layout: :layout
+  end
+end
+
 post "/pop_range" do
   new_pop_range = params[:pop_range]
   data_type = session[:data_type]
   session[:pop_range] = new_pop_range
-  @population_data = @storage.get_population_data([new_pop_range, data_type])
-
-  erb :density, layout: :layout
-  erb :age, layout: :layout
-  erb :pop_change, layout: :layout
-  erb :race, layout: :layout
+  pop_data = @storage.get_population_data([new_pop_range, data_type])
+  get_page(pop_data, data_type)
 end
 
 post "/data_type" do
     new_data_type = params[:data_type]
     pop_range = session[:pop_range]
     session[:data_type] = new_data_type
-    @population_data = @storage.get_population_data([pop_range, new_data_type])
-
-    case params[:data_type]
-    when "age"
-      erb :age, layout: :layout
-    when "pop_change"
-      erb :pop_change, layout: :layout
-    when "race"
-      erb :race, layout: :layout
-    else "density"
-      erb :density, layout: :layout
-    end
+    pop_data = @storage.get_population_data([pop_range, new_data_type])
+    get_page(pop_data, new_data_type)
 end
