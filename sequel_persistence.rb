@@ -30,15 +30,15 @@ class SequelPersistence
   end
 
   def get_population_data(arr)
-    if arr[0] == "less_than_1mil"
+    case arr[0]
+    when "less_than_1mil"
       less_than_1mil(arr[1])
-    elsif arr[0] == "between_1mil_3mil"
+    when "between_1mil_3mil"
       between_1mil_3mil(arr[1])
-    elsif arr[0] == "more_than_3mil"
+    when "more_than_3mil"
       more_than_3mil(arr[1])
-    else
+    else "density"
       density_all
     end
   end
-
 end

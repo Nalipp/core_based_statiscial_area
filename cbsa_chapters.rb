@@ -55,9 +55,9 @@ post "/pop_range" do
 end
 
 post "/data_type" do
-    new_data_type = params[:data_type]
-    pop_range = session[:pop_range]
-    session[:data_type] = new_data_type
-    pop_data = @storage.get_population_data([pop_range, new_data_type])
-    get_page(pop_data, new_data_type)
+  new_data_type = params[:data_type]
+  pop_range = session[:pop_range]
+  session[:data_type] = new_data_type
+  pop_data = @storage.get_population_data([pop_range, new_data_type])
+  get_page(pop_data, new_data_type)
 end
