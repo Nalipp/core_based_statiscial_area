@@ -1,0 +1,29 @@
+<header>
+<h1><a href="/current_query">< </a><%= @city_data.first[:geo_area] %>, <%= @city_data.first[:state] %></h1>
+  <h2>city stats</h2>
+</header>
+<section class="city_data">
+  <% @city_data.each do |row| %>
+    <p>pop_2010 : <%= row[:pop_2010] %></p>
+    <p>geo_area_id : <%= row[:geo_area_id] %></p>
+    <p>less_than_18 : <%= row[:less_than_18] %></p>
+    <p>between_18_24 : <%= row[:between_18_24] %></p>
+    <p>between_25_34 : <%= row[:between_25_34] %></p>
+    <p>between_35_44 : <%= row[:between_35_44] %></p>
+    <p>between_45_54 : <%= row[:between_45_54] %></p>
+    <p>between_55_64 : <%= row[:between_55_64] %></p>
+    <p>between_65_74 : <%= row[:between_65_74] %></p>
+    <p>more_than_75 : <%= row[:more_than_75] %></p>
+    <p>white : <%= row[:white] %></p>
+    <p>black : <%= row[:black] %></p>
+    <p>asian : <%= row[:asian] %></p>
+    <p>hispanic : <%= row[:hispanic] %></p>
+    <p>other_native_american_muti_race : <%= row[:other_native_american_muti_race] %></p>
+    <p>sq_miles : <%= row[:sq_miles] %></p>
+    <p>density_2010 : <%= row[:density_2010] %></p>
+    <p>weighted_density_2010 : <%= row[:weighted_density_2010] %></p>
+    <p>density_change : <%= row[:density_change] %></p>
+    <p>pop_change : <%= row[:pop_change] %></p>
+    <p>pop_percent_change : <%= row[:pop_percent_change] %></p>
+  <% end %>
+</section>

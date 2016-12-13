@@ -65,17 +65,23 @@ button:active {
 }
 
 header nav button h3 {
-  font-size: 20px;
-  background: white;
-  padding: 10px 20px;
-  border: 2px solid grey;
-  border-radius: 20px;
-  margin-right: 40px;
+  font-size: 25px;
+  background: #d4d4d4;
+  color: grey;
   min-width: 140px;
+  border-radius: 30px;
+  padding: 20px 20px;
+  margin-right: 40px;
 }
 
 .table-wrapper {
   margin: 30px;
+}
+
+.table-wrapper h2 {
+  font-family: 'Inconsolata', monospace;
+  color: grey;
+  font-size: 30px;
 }
 
 table th {

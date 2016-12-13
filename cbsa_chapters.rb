@@ -61,3 +61,16 @@ post "/data_type" do
   pop_data = @storage.get_population_data([pop_range, new_data_type])
   get_page(pop_data, new_data_type)
 end
+
+get "/current_query" do
+  pop_range = session[:pop_range] || 'all'
+  data_type = session[:data_type] || 'density'
+  pop_data = @storage.get_population_data([pop_range, data_type])
+  get_page(pop_data, data_type)
+end
+
+get "/city_data/:city_name" do
+  @city_data = @storage.city_data(params[:city_name])
+
+  erb :city_data, layout: :layout
+end

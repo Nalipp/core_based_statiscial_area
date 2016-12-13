@@ -1,4 +1,24 @@
+<header>
+  <h1>Sortable US Population Data</h1>
+  <h2>core statistical based areas</h2>
+  <p><a href="http://www.census.gov/popest/data/metro/totals/2015/index.html" target="_blank">download</a> the us government source data</p>
+  <nav>
+    <form action="pop_range" method="post">
+      <button name="pop_range" type="submit" value="all"><h3>all</h3></button>
+      <button name="pop_range" type="submit" value="less_than_1mil"><h3>< 1mil</h3></button>
+      <button name="pop_range" type="submit" value="between_1mil_3mil"><h3>1mil-3mil</h3></button>
+      <button name="pop_range" type="submit" value="more_than_3mil"><h3>3mil +</h3></button>
+    </form>
+    <form action="data_type" method="post">
+      <button name="data_type" type="submit" value="density"><h3>density</h3></button>
+      <button name="data_type" type="submit" value="age"><h3>age</h3></button>
+      <button name="data_type" type="submit" value="pop_change"><h3>pop change</h3></button>
+      <button name="data_type" type="submit" value="race"><h3>race</h3></button>
+    </form>
+  </nav>
+</header>
 <section class="table-wrapper">
+  <h2>Population Change</h2>
   <table id="table" class="tablesorter">
     <thead>
       <tr>
@@ -12,7 +32,7 @@
     <tbody>
       <% @population_data.each do |row| %>
         <tr>
-          <td><%= row[:geo_area]%></td>
+          <td><a href="/city_data/<%= row[:geo_area] %>"><%= row[:geo_area]%></td></a>
           <td><%= row[:state]%></td>
           <td><%= row[:pop_2010] %></td>
           <td><%= row[:pop_change ] %></td>
