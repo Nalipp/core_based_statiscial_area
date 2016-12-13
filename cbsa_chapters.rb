@@ -24,20 +24,19 @@ before do
 end
 
 get "/" do
-  redirect "/city_data"
+  redirect "/density"
 end
 
-get "/city_data" do
+get "/density" do
   @population_data = @storage.density_all
-  erb :city_data, layout: :layout
+  erb :density, layout: :layout
 end
 
 post "/pop_range" do
-
-    new_pop_range = params[:pop_range]
-    data_type = session[:data_type]
-    session[:pop_range] = new_pop_range
-    @population_data = @storage.get_population_data([new_pop_range, data_type])
+  new_pop_range = params[:pop_range]
+  data_type = session[:data_type]
+  session[:pop_range] = new_pop_range
+  @population_data = @storage.get_population_data([new_pop_range, data_type])
 
   erb :density, layout: :layout
   erb :age, layout: :layout
@@ -50,9 +49,15 @@ post "/data_type" do
     pop_range = session[:pop_range]
     session[:data_type] = new_data_type
     @population_data = @storage.get_population_data([pop_range, new_data_type])
-    
-  erb :density, layout: :layout
-  erb :age, layout: :layout
-  erb :pop_change, layout: :layout
-  erb :race, layout: :layout
+
+    case params[:data_type]
+    when "age"
+      erb :age, layout: :layout
+    when "pop_change"
+      erb :pop_change, layout: :layout
+    when "race"
+      erb :race, layout: :layout
+    else "density"
+      erb :density, layout: :layout
+    end
 end

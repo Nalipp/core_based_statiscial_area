@@ -1,0 +1,42 @@
+<section class="table-wrapper">
+  <nav>
+    <form action="pop_range" method="post">
+      <button name="pop_range" type="submit" value="all"><h3>all</h3></button>
+      <button name="pop_range" type="submit" value="less_than_1mil"><h3>< 1mil</h3></button>
+      <button name="pop_range" type="submit" value="between_1mil_3mil"><h3>1mil-3mil</h3></button>
+      <button name="pop_range" type="submit" value="more_than_3mil"><h3>3mil +</h3></button>
+    </form>
+  </nav>
+  <nav>
+    <form action="data_type" method="post">
+      <button name="data_type" type="submit" value="density"><h3>density</h3></button>
+      <button name="data_type" type="submit" value="age"><h3>age</h3></button>
+      <button name="data_type" type="submit" value="pop_change"><h3>pop change</h3></button>
+      <button name="data_type" type="submit" value="race"><h3>race</h3></button>
+    </form>
+  </nav>
+  <table id="table" class="tablesorter">
+    <thead>
+      <tr>
+        <th>city</th>
+        <th>state</th>
+        <th>total population</th>
+        <th>area square miles</th>
+        <th>weighted density</th>
+        <th>density change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @population_data.each do |row| %>
+        <tr>
+          <td><%= row[:geo_area]%></td>
+          <td><%= row[:state]%></td>
+          <td><%= row[:pop_2010].gsub(/,/, "").to_i %></td>
+          <td><%= row[:sq_miles].gsub(/,/, "").to_i %></td>
+          <td><%= row[:weighted_density_2010].gsub(/,/, "").to_i %></td>
+          <td><%= row[:density_change].gsub(/,/, "").to_i %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
