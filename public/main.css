@@ -41,58 +41,41 @@ header p a {
   text-align: center;
 }
 
-label a {
+header nav {
+  background: white;
+  margin-top: 30px;
+  padding: 30px 0 0 40px;
+}
+
+header nav form {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+button {
+  font-family: 'Inconsolata', monospace;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+button:active {
+  transform: translateX(1.5px);
+}
+
+header nav button h3 {
   font-size: 20px;
-  padding: 10px;
+  background: white;
+  padding: 10px 20px;
   border: 2px solid grey;
-  border-radius: 10px;
-  margin: 10px;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  border-radius: 20px;
+  margin-right: 40px;
+  min-width: 140px;
 }
 
 .table-wrapper {
   margin: 30px;
-}
-
-nav {
-  font-family: 'Inconsolata', monospace;
-  margin-top: 30px;
-  background: white;
-}
-
-button {
-  background: none;
-  border: none;
-  box-sizing: none;
-  font-family: 'Inconsolata', monospace;
-}
-
-nav h3 {
-  font-size: 26px;
-  letter-spacing: 4px;
-  display: inline-block;
-  background: white;
-  padding: 15px 15px;
-  text-align: center;
-  min-width: 180px;
-  margin-left: 13%;
-  margin-right: 10px;
-  margin-top: 50px;
-  color: grey;
-  border: 2px solid grey;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-section nav h3 {
-  margin-left: 0;
-  /*margin-right: 2.5%;*/
-  margin-bottom: 50px;
 }
 
 table th {
