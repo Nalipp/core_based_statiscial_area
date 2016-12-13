@@ -1,3 +1,5 @@
+require "pry"
+
 require "sinatra"
 require "sinatra/content_for"
 require "tilt/erubis"
@@ -17,13 +19,40 @@ end
 
 before do
   @storage = SequelPersistence.new(logger)
+  session[:pop_range] ||= "all"
+  session[:data_type] ||= "density"
 end
 
 get "/" do
-  redirect "/density"
+  redirect "/city_data"
 end
 
-get "/density" do
-  @population_data = @storage.density
+get "/city_data" do
+  @population_data = @storage.density_all
+  erb :city_data, layout: :layout
+end
+
+post "/pop_range" do
+
+    new_pop_range = params[:pop_range]
+    data_type = session[:data_type]
+    session[:pop_range] = new_pop_range
+    @population_data = @storage.get_population_data([new_pop_range, data_type])
+
   erb :density, layout: :layout
+  erb :age, layout: :layout
+  erb :pop_change, layout: :layout
+  erb :race, layout: :layout
+end
+
+post "/data_type" do
+    new_data_type = params[:data_type]
+    pop_range = session[:pop_range]
+    session[:data_type] = new_data_type
+    @population_data = @storage.get_population_data([pop_range, new_data_type])
+    
+  erb :density, layout: :layout
+  erb :age, layout: :layout
+  erb :pop_change, layout: :layout
+  erb :race, layout: :layout
 end
