@@ -1,5 +1,5 @@
 <header>
-<h1><a href="/current_query">< </a><%= @city_data.first[:geo_area] %>, <%= @city_data.first[:state] %></h1>
+  <h1><a href="/current_query">< </a><%= @city_data.first[:geo_area] %>, <%= @city_data.first[:state] %></h1>
   <h2>city stats</h2>
 </header>
 <section class="city_data">
@@ -14,11 +14,17 @@
     <p>between_55_64 : <%= row[:between_55_64] %></p>
     <p>between_65_74 : <%= row[:between_65_74] %></p>
     <p>more_than_75 : <%= row[:more_than_75] %></p>
-    <p>white : <%= row[:white] %></p>
-    <p>black : <%= row[:black] %></p>
-    <p>asian : <%= row[:asian] %></p>
-    <p>hispanic : <%= row[:hispanic] %></p>
-    <p>other_native_american_muti_race : <%= row[:other_native_american_muti_race] %></p>
+    <p>white : <%= row[:white] %> <p>
+    <p>black : <%= row[:black] %> <p>
+    <p>asian : <%= row[:asian] %> <p>
+    <p>hispanic : <%= row[:hispanic] %> <p>
+    <p>other : <%= row[:other_native_american_muti_race] %> <p>
+      <% @some_var << row[:white].to_i %>
+      <% @some_var << row[:black].to_i %>
+      <% @some_var << row[:asian].to_i %>
+      <% @some_var << row[:hispanic].to_i %>
+      <% @some_var << row[:other_native_american_muti_race].to_i %>
+
     <p>sq_miles : <%= row[:sq_miles] %></p>
     <p>density_2010 : <%= row[:density_2010] %></p>
     <p>weighted_density_2010 : <%= row[:weighted_density_2010] %></p>

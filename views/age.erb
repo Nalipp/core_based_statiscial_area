@@ -1,7 +1,7 @@
 <header>
   <h1>Sortable US Population Data</h1>
-  <h2>core statistical based areas</h2>
-  <p><a href="http://www.census.gov/popest/data/metro/totals/2015/index.html" target="_blank">download</a> the us government source data</p>
+  <h2><a href="https://en.wikipedia.org/wiki/Core-based_statistical_area">core statistical based areas</a></h2>
+  <p><a href="https://www.census.gov/programs-surveys/metro-micro.html" target="_blank">download</a> the us government source data</p>
   <nav>
     <form action="pop_range" method="post">
       <button name="pop_range" type="submit" value="all"><h3>all</h3></button>
@@ -39,16 +39,16 @@
       <% @population_data.each do |row| %>
         <tr>
           <td><a href="/city_data/<%= row[:geo_area] %>"><%= row[:geo_area]%></td></a>
-          <td><%= row[:state]%></td>
-          <td><%= row[:pop_2010] %></td>
-          <td><%= row[:less_than_18] %></td>
-          <td><%= row[:between_18_24] %></td>
-          <td><%= row[:between_25_34] %></td>
-          <td><%= row[:between_35_44] %></td>
-          <td><%= row[:between_45_54] %></td>
-          <td><%= row[:between_55_64] %></td>
-          <td><%= row[:between_65_74] %></td>
-          <td><%= row[:more_than_75] %></td>
+            <td><%= row[:state]%></td>
+            <td><%= row[:pop_2010] %></td>
+            <td><%= row[:less_than_18] %></td>
+            <td><%= row[:between_18_24] %></td>
+            <td><%= row[:between_25_34] %></td>
+            <td><%= row[:between_35_44] %></td>
+            <td><%= row[:between_45_54] %></td>
+            <td><%= row[:between_55_64] %></td>
+            <td><%= row[:between_65_74] %></td>
+            <td><%= row[:more_than_75] %></td>
         </tr>
       <% end %>
     </tbody>

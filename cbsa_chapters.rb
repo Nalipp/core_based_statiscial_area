@@ -71,6 +71,6 @@ end
 
 get "/city_data/:city_name" do
   @city_data = @storage.city_data(params[:city_name])
-
+  @some_var = []
   erb :city_data, layout: :layout
 end

@@ -31,6 +31,10 @@ header h2 {
   padding: 10px 40px;
 }
 
+header h2 a {
+  color: white;
+}
+
 header p a {
   color: #d4d4d4;
   padding: 10px 0 40px 50px;
@@ -118,6 +122,10 @@ table td:nth-child(n+3) {
   padding-right: 25px;
 }
 
+table td a {
+  color: black;
+}
+
 /* tablesorter  jQuery plugin http://tablesorter.com/docs/#Download */
 
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
@@ -128,4 +136,14 @@ table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSo
 footer {
   background: grey;
   height: 100px
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+  max-width: 10px;
 }
